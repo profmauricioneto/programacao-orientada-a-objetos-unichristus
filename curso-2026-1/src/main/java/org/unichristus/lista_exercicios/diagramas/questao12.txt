@@ -1,0 +1,8 @@
+Um jogo de RPG por turnos precisa de um sistema de batalha. Projete:
+ - Combatente (interface): atacar(Personagem): int, defender(int): int e estaVivo(): boolean.
+ - Magico (interface): lancarMagia(Personagem): int, getMana(): int e regenerarMana(int): void.
+ - Personagem (classe abstrata, implementa Combatente): atributo estático totalPersonagens, id automático, nome, vida máxima/atual, ataque, defesa, nível. Método receberDano(int). Método abstrato getHabilidadeEspecial(): String.
+ - Guerreiro: herda Personagem. Possui armadura (reduz dano) e barra de raiva (acumula ao receber dano, libera com frenesi()).
+ - Mago: herda Personagem, implementa Magico. Ataque base fraco mas magia poderosa; mana que se regenera.
+ - Arqueiro: herda Personagem. Possui flechas (limitadas) e precisão que influencia o dano.
+Simule uma batalha em turnos entre os personagens.

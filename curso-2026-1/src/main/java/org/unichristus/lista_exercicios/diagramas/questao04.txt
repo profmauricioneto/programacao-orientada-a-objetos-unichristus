@@ -1,0 +1,6 @@
+O departamento de RH de uma empresa de tecnologia precisa calcular os salários de diferentes tipos de funcionários. Modele o sistema com herança:
+ - Funcionario (classe base): nome, CPF e salário base. Método calcularSalario() retorna o salário base.
+ - Gerente: herda de Funcionario, possui um bônus fixo e um número de subordinados. Salário = base + bônus.
+ - Desenvolvedor: herda de Funcionario, possui linguagem principal e horas extras. Salário = base + (horasExtras × R$ 75,00).
+ - Vendedor: herda de Funcionario, possui total de vendas e percentual de comissão. Salário = base + (totalVendas × percentual / 100).
+No programa principal, crie uma lista de Funcionario e calcule a folha de pagamento total.

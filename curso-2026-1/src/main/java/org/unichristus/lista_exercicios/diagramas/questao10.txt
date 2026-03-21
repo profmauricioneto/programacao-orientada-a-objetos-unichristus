@@ -1,0 +1,7 @@
+Um hospital público precisa de um sistema para gerenciar médicos, pacientes e consultas. Modele usando herança, classes abstratas e interfaces:
+ - Atendivel (interface): realizarAtendimento(): String e getPrioridade(): int.
+ - Prescrevivel (interface): emitirPrescricao(): String e getCRM(): String.
+ - Pessoa (classe abstrata): nome, CPF, data de nascimento, telefone. Método concreto getIdade() e método abstrato getDescricao().
+ - Medico: estende Pessoa e implementa Atendivel e Prescrevivel. Possui CRM, especialidade e lista de horários disponíveis.
+ - Paciente: estende Pessoa e implementa Atendivel. Possui prontuário, tipo sanguíneo, lista de alergias e histórico. Prioridade do atendimento calculada pela idade (idosos têm prioridade máxima).
+ - Consulta: associa um Médico a um Paciente, tem atributo estático de contador e registra diagnóstico.

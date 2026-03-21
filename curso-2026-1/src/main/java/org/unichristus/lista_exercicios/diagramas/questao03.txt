@@ -1,0 +1,6 @@
+Uma biblioteca pública precisa de um sistema para gerenciar seu acervo e empréstimos. Modele o sistema com as classes:
+Autor: nome e nacionalidade.
+ - Livro: título, ISBN, ano de publicação e lista de autores (um livro pode ter múltiplos autores).
+ - Emprestimo: referência ao livro, nome do solicitante, data do empréstimo, previsão de devolução (informada em dias) e status.
+ - Biblioteca: nome, acervo de livros e lista de empréstimos. Deve permitir adicionar livros, emprestar um livro (verificando disponibilidade), buscar por ISBN e por título.
+ - Identifique e justifique os tipos de relacionamento entre as classes.

@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram id="q4-funcionarios" name="Q4 - Hierarquia de Funcionários">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Funcionario (classe base) -->
+        <mxCell id="func" value="Funcionario" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="240" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="func-attrs" value="# nome: String&#xa;# cpf: String&#xa;# salarioBase: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="func">
+          <mxGeometry y="30" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="func-sep" value="" style="line;strokeColor=#6c8ebf;fillColor=none;" vertex="1" parent="func">
+          <mxGeometry y="100" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="func-methods" value="+ calcularSalario(): double&#xa;+ getNome(): String&#xa;+ getCpf(): String&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="func">
+          <mxGeometry y="110" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Gerente -->
+        <mxCell id="gerente" value="Gerente" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ger-attrs" value="- bonus: double&#xa;- numFuncionariosSob: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="gerente">
+          <mxGeometry y="30" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ger-sep" value="" style="line;strokeColor=#82b366;fillColor=none;" vertex="1" parent="gerente">
+          <mxGeometry y="80" width="230" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="ger-methods" value="+ calcularSalario(): double&#xa;+ getBonus(): double&#xa;+ getNumFuncionariosSob(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="gerente">
+          <mxGeometry y="90" width="230" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Desenvolvedor -->
+        <mxCell id="dev" value="Desenvolvedor" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="370" y="310" width="240" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-attrs" value="- linguagemPrincipal: String&#xa;- horasExtras: int&#xa;$ VALOR_HORA_EXTRA: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="dev">
+          <mxGeometry y="30" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-sep" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="dev">
+          <mxGeometry y="100" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-methods" value="+ calcularSalario(): double&#xa;+ getLinguagemPrincipal(): String&#xa;+ getHorasExtras(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="dev">
+          <mxGeometry y="110" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Vendedor -->
+        <mxCell id="vendedor" value="Vendedor" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="720" y="310" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="vend-attrs" value="- totalVendas: double&#xa;- percentualComissao: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="vendedor">
+          <mxGeometry y="30" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vend-sep" value="" style="line;strokeColor=#b85450;fillColor=none;" vertex="1" parent="vendedor">
+          <mxGeometry y="80" width="230" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="vend-methods" value="+ calcularSalario(): double&#xa;+ getTotalVendas(): double&#xa;+ getPercentualComissao(): double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="vendedor">
+          <mxGeometry y="90" width="230" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Herança: Funcionario -> Gerente -->
+        <mxCell id="her-ger" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="gerente" target="func">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="155" y="260"/><mxPoint x="500" y="260"/></Array></mxGeometry>
+        </mxCell>
+        <!-- Herança: Funcionario -> Desenvolvedor -->
+        <mxCell id="her-dev" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="dev" target="func">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Herança: Funcionario -> Vendedor -->
+        <mxCell id="her-vend" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="vendedor" target="func">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="835" y="260"/><mxPoint x="500" y="260"/></Array></mxGeometry>
+        </mxCell>
+
+        <!-- Labels herança -->
+        <mxCell id="lbl-extends" value="«extends»" style="text;html=1;align=center;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="460" y="265" width="80" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

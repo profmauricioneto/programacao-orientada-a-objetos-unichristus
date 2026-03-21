@@ -1,0 +1,120 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram id="q10-hospital" name="Q10 - Sistema de Hospital">
+    <mxGraphModel dx="1500" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+
+        <!-- Interface Atendivel -->
+        <mxCell id="iatend" value="«interface»&#xa;Atendivel" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="iatend-m" value="+ realizarAtendimento(): String&#xa;+ getPrioridade(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="iatend">
+          <mxGeometry y="40" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Interface Prescrevivel -->
+        <mxCell id="ipresc" value="«interface»&#xa;Prescrevivel" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="210" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="ipresc-m" value="+ emitirPrescricao(): String&#xa;+ getCRM(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="ipresc">
+          <mxGeometry y="40" width="210" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Classe Abstrata: Pessoa -->
+        <mxCell id="pessoa" value="«abstract»&#xa;Pessoa" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="220" y="220" width="250" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="pes-a" value="# nome: String&#xa;# cpf: String&#xa;# dataNascimento: LocalDate&#xa;# telefone: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="pessoa">
+          <mxGeometry y="40" width="250" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="pes-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="pessoa">
+          <mxGeometry y="120" width="250" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="pes-m" value="+ getNome(): String&#xa;+ getCpf(): String&#xa;+ getIdade(): int&#xa;+ getDescricao(): String {abstract}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="pessoa">
+          <mxGeometry y="130" width="250" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Medico -->
+        <mxCell id="medico" value="Medico" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="530" width="230" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="med-a" value="- crm: String&#xa;- especialidade: String&#xa;- horariosDisponiveis: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="medico">
+          <mxGeometry y="30" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="med-sep" value="" style="line;strokeColor=#82b366;" vertex="1" parent="medico">
+          <mxGeometry y="100" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="med-m" value="+ getDescricao(): String&#xa;+ realizarAtendimento(): String&#xa;+ getPrioridade(): int&#xa;+ emitirPrescricao(): String&#xa;+ getCRM(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="medico">
+          <mxGeometry y="110" width="230" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Paciente -->
+        <mxCell id="paciente" value="Paciente" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="530" width="230" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="pac-a" value="- numeroProntuario: String&#xa;- tipoSanguineo: String&#xa;- alergias: List&lt;String&gt;&#xa;- historico: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="paciente">
+          <mxGeometry y="30" width="230" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="pac-sep" value="" style="line;strokeColor=#d6b656;" vertex="1" parent="paciente">
+          <mxGeometry y="110" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="pac-m" value="+ getDescricao(): String&#xa;+ realizarAtendimento(): String&#xa;+ getPrioridade(): int&#xa;+ adicionarHistorico(String): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="paciente">
+          <mxGeometry y="120" width="230" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Consulta -->
+        <mxCell id="consulta" value="Consulta" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="720" y="350" width="250" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="con-a" value="$ totalConsultas: int&#xa;- id: int&#xa;- medico: Medico&#xa;- paciente: Paciente&#xa;- dataHora: LocalDateTime&#xa;- diagnostico: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="consulta">
+          <mxGeometry y="30" width="250" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="con-sep" value="" style="line;strokeColor=#b85450;" vertex="1" parent="consulta">
+          <mxGeometry y="140" width="250" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="con-m" value="+ registrarDiagnostico(String): void&#xa;$ getTotalConsultas(): int&#xa;+ getResumo(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="consulta">
+          <mxGeometry y="150" width="250" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Pessoa -> Medico extends -->
+        <mxCell id="ext-med" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.2;entryY=1;" edge="1" parent="1" source="medico" target="pessoa">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Pessoa -> Paciente extends -->
+        <mxCell id="ext-pac" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="paciente" target="pessoa">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Medico implements Atendivel -->
+        <mxCell id="impl-iatend" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.2;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="medico" target="iatend">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Medico implements Prescrevivel -->
+        <mxCell id="impl-ipresc" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.8;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="medico" target="ipresc">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="155" y="460"/><mxPoint x="485" y="460"/></Array></mxGeometry>
+        </mxCell>
+        <!-- Paciente implements Atendivel -->
+        <mxCell id="impl-pac-iatend" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.2;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="paciente" target="iatend">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="375" y="460"/><mxPoint x="180" y="460"/></Array></mxGeometry>
+        </mxCell>
+
+        <!-- Consulta -> Medico associação -->
+        <mxCell id="assoc-con-med" value="atende" style="endArrow=open;endFill=0;exitX=0;exitY=0.4;entryX=1;entryY=0.5;" edge="1" parent="1" source="consulta" target="medico">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Consulta -> Paciente associação -->
+        <mxCell id="assoc-con-pac" value="envolve" style="endArrow=open;endFill=0;exitX=0;exitY=0.6;entryX=1;entryY=0.5;" edge="1" parent="1" source="consulta" target="paciente">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Labels -->
+        <mxCell id="lbl-ext" value="«extends»" style="text;html=1;align=center;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="285" y="455" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl-impl" value="«implements»" style="text;html=1;align=center;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="110" y="455" width="100" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

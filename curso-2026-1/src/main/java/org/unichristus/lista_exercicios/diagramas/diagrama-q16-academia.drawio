@@ -1,0 +1,173 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram id="q16-academia" name="Q16 - Sistema de Academia">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1050" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+
+        <!-- Enum TipoModalidade -->
+        <mxCell id="emod" value="«enum»&#xa;TipoModalidade" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e6d0de;strokeColor=#ae4132;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="40" width="180" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="emod-v" value="MUSCULACAO&#xa;NATACAO&#xa;YOGA&#xa;SPINNING&#xa;CROSSFIT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="emod">
+          <mxGeometry y="40" width="180" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Interface Pagante -->
+        <mxCell id="ipag" value="«interface»&#xa;Pagante" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="210" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="ipag-m" value="+ pagarMensalidade(): void&#xa;+ calcularDesconto(): double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="ipag">
+          <mxGeometry y="40" width="210" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Interface Avaliavel -->
+        <mxCell id="iavalag" value="«interface»&#xa;Avaliavel" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="iavalag-m" value="+ avaliarAluno(String): void&#xa;+ getUltimaAvaliacao(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="iavalag">
+          <mxGeometry y="40" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Classe Abstrata Pessoa -->
+        <mxCell id="pessag" value="«abstract»&#xa;Pessoa" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="220" y="220" width="240" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="pessag-a" value="# nome: String&#xa;# cpf: String&#xa;# telefone: String&#xa;# email: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="pessag">
+          <mxGeometry y="40" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="pessag-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="pessag">
+          <mxGeometry y="120" width="240" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="pessag-m" value="+ getNome(): String&#xa;+ getResumo(): String {abstract}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="pessag">
+          <mxGeometry y="130" width="240" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Aluno -->
+        <mxCell id="aluno" value="Aluno" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="530" width="230" height="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="al-a" value="$ totalAlunos: int&#xa;- matricula: String&#xa;- plano: Plano&#xa;- modalidades: List&lt;Modalidade&gt;&#xa;- mensalidadesPagas: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="aluno">
+          <mxGeometry y="30" width="230" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="al-sep" value="" style="line;strokeColor=#82b366;" vertex="1" parent="aluno">
+          <mxGeometry y="130" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="al-m" value="+ getResumo(): String&#xa;+ pagarMensalidade(): void&#xa;+ calcularDesconto(): double&#xa;+ matricularModalidade(Modalidade): void&#xa;$ getTotalAlunos(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="aluno">
+          <mxGeometry y="140" width="230" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Instrutor -->
+        <mxCell id="instrutor" value="Instrutor" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="530" width="230" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="inst-a" value="- cref: String&#xa;- especialidades: List&lt;TipoModalidade&gt;&#xa;- salario: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="instrutor">
+          <mxGeometry y="30" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="inst-sep" value="" style="line;strokeColor=#d6b656;" vertex="1" parent="instrutor">
+          <mxGeometry y="100" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="inst-m" value="+ getResumo(): String&#xa;+ avaliarAluno(String): void&#xa;+ getUltimaAvaliacao(): String&#xa;+ getCREF(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="instrutor">
+          <mxGeometry y="110" width="230" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Plano -->
+        <mxCell id="plano" value="Plano" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="740" y="220" width="230" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="pl-a" value="- nome: String&#xa;- valorMensal: double&#xa;- numeroMeses: int&#xa;- incluiAvaliacao: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="plano">
+          <mxGeometry y="30" width="230" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="pl-sep" value="" style="line;strokeColor=#b85450;" vertex="1" parent="plano">
+          <mxGeometry y="110" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="pl-m" value="+ getValorTotal(): double&#xa;+ getNome(): String&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="plano">
+          <mxGeometry y="120" width="230" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Modalidade -->
+        <mxCell id="modalidade" value="Modalidade" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="740" y="530" width="250" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="mod-a" value="- tipo: TipoModalidade&#xa;- instrutor: Instrutor&#xa;- horario: String&#xa;- capacidadeMax: int&#xa;- inscritos: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="modalidade">
+          <mxGeometry y="30" width="250" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="mod-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="modalidade">
+          <mxGeometry y="130" width="250" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="mod-m" value="+ inscrever(): boolean&#xa;+ getTipo(): TipoModalidade&#xa;+ temVaga(): boolean&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="modalidade">
+          <mxGeometry y="140" width="250" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Academia -->
+        <mxCell id="academia" value="Academia" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#e6d0de;strokeColor=#ae4132;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="530" width="270" height="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="aca-a" value="- nome: String&#xa;- cnpj: String&#xa;- alunos: List&lt;Aluno&gt;&#xa;- instrutores: List&lt;Instrutor&gt;&#xa;- modalidades: List&lt;Modalidade&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="academia">
+          <mxGeometry y="30" width="270" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="aca-sep" value="" style="line;strokeColor=#ae4132;" vertex="1" parent="academia">
+          <mxGeometry y="130" width="270" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="aca-m" value="+ matricularAluno(Aluno): void&#xa;+ contratarInstrutor(Instrutor): void&#xa;+ adicionarModalidade(Modalidade): void&#xa;+ gerarRelatorio(): void&#xa;+ buscarAlunoPorMatricula(String): Aluno" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="academia">
+          <mxGeometry y="140" width="270" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Herança Pessoa -> Aluno -->
+        <mxCell id="ext-al" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.3;entryY=1;" edge="1" parent="1" source="aluno" target="pessag">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Herança Pessoa -> Instrutor -->
+        <mxCell id="ext-inst" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.7;entryY=1;" edge="1" parent="1" source="instrutor" target="pessag">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Aluno implements Pagante -->
+        <mxCell id="impl-pag" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.2;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="aluno" target="ipag">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Instrutor implements Avaliavel -->
+        <mxCell id="impl-avaL" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.8;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="instrutor" target="iavalag">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Aluno -> Plano (associação) -->
+        <mxCell id="assoc-al-pl" value="assina" style="endArrow=open;endFill=0;exitX=1;exitY=0.4;entryX=0;entryY=0.7;" edge="1" parent="1" source="aluno" target="plano">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Aluno -> Modalidade (associação) -->
+        <mxCell id="assoc-al-mod" value="inscreve-se" style="endArrow=open;endFill=0;exitX=1;exitY=0.6;entryX=0;entryY=0.3;" edge="1" parent="1" source="aluno" target="modalidade">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Modalidade -> Instrutor -->
+        <mxCell id="assoc-mod-inst" value="ministrada por" style="endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="modalidade" target="instrutor">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Modalidade -> TipoModalidade -->
+        <mxCell id="assoc-mod-tipo" value="é do tipo" style="endArrow=open;endFill=0;exitX=1;exitY=0.2;entryX=0;entryY=0.8;" edge="1" parent="1" source="modalidade" target="emod">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Academia -> tudo (agregação) -->
+        <mxCell id="agreg-aca-al" value="gerencia" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;exitX=0;exitY=0.3;entryX=1;entryY=0.3;" edge="1" parent="1" source="academia" target="aluno">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="agreg-aca-inst" value="" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;exitX=0;exitY=0.5;entryX=1;entryY=0.3;" edge="1" parent="1" source="academia" target="instrutor">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="agreg-aca-mod" value="" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="academia" target="modalidade">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Labels herança/impl -->
+        <mxCell id="lbl-ext2" value="«extends»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="260" y="460" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl-impl-pag" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="330" width="110" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl-impl-av" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="330" width="110" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

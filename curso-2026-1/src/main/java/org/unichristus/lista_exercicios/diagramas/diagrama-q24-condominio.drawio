@@ -1,0 +1,130 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram id="q24-cond" name="Q24 - Sistema de Condomínio">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <!-- Enum TipoUnidade -->
+        <mxCell id="etipo" value="«enum»&#xa;TipoUnidade" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e6d0de;strokeColor=#ae4132;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="40" width="170" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="etipo-v" value="APARTAMENTO&#xa;COBERTURA&#xa;SALA_COMERCIAL&#xa;GARAGEM" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="etipo">
+          <mxGeometry y="40" width="170" height="70" as="geometry"/>
+        </mxCell>
+        <!-- Interface Pagante -->
+        <mxCell id="ipag" value="«interface»&#xa;Pagante" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="210" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="ipag-m" value="+ pagarTaxa(): void&#xa;+ calcularMulta(): double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="ipag">
+          <mxGeometry y="40" width="210" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Interface Notificavel -->
+        <mxCell id="inotif" value="«interface»&#xa;Notificavel" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="370" y="40" width="210" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="inotif-m" value="+ notificar(String): void&#xa;+ getNotificacoes(): List" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="inotif">
+          <mxGeometry y="40" width="210" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Classe Abstrata Pessoa -->
+        <mxCell id="pessoa" value="«abstract»&#xa;Pessoa" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="220" y="230" width="250" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="pes-a" value="# nome: String&#xa;# cpf: String&#xa;# telefone: String&#xa;# notificacoes: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="pessoa">
+          <mxGeometry y="40" width="250" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="pes-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="pessoa">
+          <mxGeometry y="120" width="250" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="pes-m" value="+ notificar(String): void&#xa;+ getNotificacoes(): List&#xa;+ getResumo(): String {abstract}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="pessoa">
+          <mxGeometry y="130" width="250" height="50" as="geometry"/>
+        </mxCell>
+        <!-- Morador -->
+        <mxCell id="morador" value="Morador" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="230" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="mor-a" value="$ totalMoradores: int&#xa;- unidade: Unidade&#xa;- proprietario: boolean&#xa;- taxasEmAtraso: int&#xa;- taxasMensais: List&lt;Double&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="morador">
+          <mxGeometry y="30" width="230" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="mor-sep" value="" style="line;strokeColor=#82b366;" vertex="1" parent="morador">
+          <mxGeometry y="130" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="mor-m" value="+ pagarTaxa(): void&#xa;+ calcularMulta(): double&#xa;+ getResumo(): String&#xa;$ getTotalMoradores(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="morador">
+          <mxGeometry y="140" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <!-- Sindico -->
+        <mxCell id="sindico" value="Sindico" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="560" width="230" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="sin-a" value="- mandatoInicio: LocalDate&#xa;- mandatoFim: LocalDate&#xa;- salario: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="sindico">
+          <mxGeometry y="30" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="sin-sep" value="" style="line;strokeColor=#d6b656;" vertex="1" parent="sindico">
+          <mxGeometry y="100" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="sin-m" value="+ pagarTaxa(): void&#xa;+ calcularMulta(): double&#xa;+ getResumo(): String&#xa;+ convocarAssembleia(String): void&#xa;+ getMandatoAtivo(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="sindico">
+          <mxGeometry y="110" width="230" height="80" as="geometry"/>
+        </mxCell>
+        <!-- Unidade -->
+        <mxCell id="unidade" value="Unidade" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="780" y="220" width="240" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="uni-a" value="- numero: String&#xa;- andar: int&#xa;- tipo: TipoUnidade&#xa;- areaM2: double&#xa;- fracao: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="unidade">
+          <mxGeometry y="30" width="240" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="uni-sep" value="" style="line;strokeColor=#b85450;" vertex="1" parent="unidade">
+          <mxGeometry y="130" width="240" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="uni-m" value="+ calcularTaxaCondominial(double): double&#xa;+ getNumero(): String&#xa;+ getTipo(): TipoUnidade&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="unidade">
+          <mxGeometry y="140" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <!-- AreaComum -->
+        <mxCell id="area" value="AreaComum" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="780" y="560" width="240" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="area-a" value="- nome: String&#xa;- capacidade: int&#xa;- disponivelHoje: boolean&#xa;- reservas: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="area">
+          <mxGeometry y="30" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="area-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="area">
+          <mxGeometry y="110" width="240" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="area-m" value="+ reservar(String, String): boolean&#xa;+ cancelarReserva(String): void&#xa;+ isDisponivel(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="area">
+          <mxGeometry y="120" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Condominio -->
+        <mxCell id="cond" value="Condominio" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#e6d0de;strokeColor=#ae4132;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="380" width="270" height="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="cond-a" value="- nome: String&#xa;- cnpj: String&#xa;- sindico: Sindico&#xa;- moradores: List&lt;Morador&gt;&#xa;- unidades: List&lt;Unidade&gt;&#xa;- areasComuns: List&lt;AreaComum&gt;&#xa;- taxaBase: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="cond">
+          <mxGeometry y="30" width="270" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="cond-sep" value="" style="line;strokeColor=#ae4132;" vertex="1" parent="cond">
+          <mxGeometry y="160" width="270" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="cond-m" value="+ cadastrarMorador(Morador): void&#xa;+ cobrarTaxas(): void&#xa;+ notificarTodos(String): void&#xa;+ gerarBalancete(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="cond">
+          <mxGeometry y="170" width="270" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Herança -->
+        <mxCell id="ext-mor" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.2;entryY=1;" edge="1" parent="1" source="morador" target="pessoa"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ext-sin" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="sindico" target="pessoa"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Pessoa implements Notificavel -->
+        <mxCell id="impl-notif" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.8;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="pessoa" target="inotif"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Morador implements Pagante -->
+        <mxCell id="impl-pag" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.2;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="morador" target="ipag"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="155" y="470"/><mxPoint x="165" y="470"/></Array></mxGeometry>
+        </mxCell>
+        <!-- Sindico implements Pagante -->
+        <mxCell id="impl-sin-pag" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.2;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="sindico" target="ipag"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Morador -> Unidade -->
+        <mxCell id="assoc-mor-uni" value="ocupa" style="endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.7;" edge="1" parent="1" source="morador" target="unidade"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Unidade -> TipoUnidade -->
+        <mxCell id="assoc-uni-tipo" value="é do tipo" style="endArrow=open;endFill=0;exitX=1;exitY=0.3;entryX=0;entryY=0.7;" edge="1" parent="1" source="unidade" target="etipo"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Condominio agregações -->
+        <mxCell id="agreg-cond-mor" value="" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;exitX=0;exitY=0.3;entryX=1;entryY=0.3;" edge="1" parent="1" source="cond" target="morador"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="agreg-cond-uni" value="" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;exitX=0;exitY=0.5;entryX=1;entryY=0.3;" edge="1" parent="1" source="cond" target="unidade"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="agreg-cond-area" value="" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;exitX=0;exitY=0.7;entryX=1;entryY=0.3;" edge="1" parent="1" source="cond" target="area"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Labels -->
+        <mxCell id="lbl-ext" value="«extends»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1"><mxGeometry x="240" y="485" width="80" height="20" as="geometry"/></mxCell>
+        <mxCell id="lbl-impl1" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1"><mxGeometry x="40" y="350" width="110" height="20" as="geometry"/></mxCell>
+        <mxCell id="lbl-impl2" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1"><mxGeometry x="380" y="165" width="110" height="20" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

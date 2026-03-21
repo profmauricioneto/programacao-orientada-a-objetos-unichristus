@@ -1,0 +1,5 @@
+Uma fintech oferece múltiplos meios de pagamento. Projete o sistema usando classes abstratas e interfaces:
+ - Validavel (interface): validar(): boolean e getMensagemErro(): String.
+ - Registravel (interface): registrar(): void e getComprovante(): String.
+ - Pagamento (classe abstrata, implementa ambas interfaces): atributos comuns (id, valor, descrição, status). Método concreto processar() que chama validar() e registrar(). Método abstrato getTipoPagamento().
+ - Implemente PagamentoPix, PagamentoCartao e PagamentoBoleto com suas regras específicas de validação e comprovante.

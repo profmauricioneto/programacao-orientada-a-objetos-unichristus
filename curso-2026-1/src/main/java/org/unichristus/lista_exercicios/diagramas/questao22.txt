@@ -1,0 +1,10 @@
+Um jogo de cartas por turnos precisa de um sistema flexível para diferentes perfis de jogadores. Projete:
+ - Naipe (enum): OUROS, ESPADAS, COPAS, PAUS.
+ - Carta: valor (1–13), naipe, estado virada/coberta. Método toString() exibe o nome (Ás, 2, ..., Rei) e o naipe.
+ - Baralho: contador estático de baralhos criados, lista de 52 cartas. Métodos embaralhar() e distribuir(int qtd): List<Carta>.
+ - Jogavel (interface): jogar(Carta): int e getDescricaoJogada(): String.
+ - Jogador (abstrato, implementa Jogavel): contador estático, id automático, nome, mão de cartas, pontuação. Método abstrato getEstrategia(): String.
+ - JogadorAgressivo: sempre joga a carta de maior valor × multiplicador de ataque.
+ - JogadorDefensivo: guarda pontos ao jogar cartas baixas (valor ≤ 5), acumulando bônus.
+ - JogadorAleatorio: escolhe carta aleatoriamente.
+ - Partida: baralho, lista de jogadores, simula rodadas e exibe vencedor.

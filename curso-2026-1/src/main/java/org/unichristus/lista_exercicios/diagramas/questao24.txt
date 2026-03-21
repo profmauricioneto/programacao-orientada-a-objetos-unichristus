@@ -1,0 +1,10 @@
+Uma administradora de condomínios precisa de um sistema completo. Aplique todos os conceitos de POO:
+ - Enum TipoUnidade: APARTAMENTO, COBERTURA, SALA_COMERCIAL, GARAGEM.
+ - Pagante (interface): pagarTaxa(): void e calcularMulta(): double.
+ - Notificavel (interface): notificar(String msg): void e getNotificacoes(): List.
+ - Pessoa (abstrata, implementa Notificavel): nome, CPF, telefone, lista de notificações. Método abstrato getResumo().
+ - Morador: estende Pessoa, implementa Pagante. Contador estático totalMoradores, referência à Unidade, flag proprietário/inquilino, controle de taxas em atraso. Multa de 2% ao mês por taxa em atraso.
+ - Sindico: estende Pessoa, implementa Pagante (paga taxa reduzida em 50%). Mandato com datas de início/fim. Método convocarAssembleia(String pauta) notifica todos os moradores.
+ - Unidade: número, andar, tipo, área em m², fração ideal (usada no rateio da taxa). Método calcularTaxaCondominial(double totalDespesas).
+ - AreaComum: nome, capacidade, reservas por morador/data. Método reservar(String morador, String data): boolean.
+ - Condominio: nome, CNPJ, síndico, lista de moradores, unidades e áreas comuns. Métodos cobrarTaxas(double totalDespesas), notificarTodos(String msg) e gerarBalancete().

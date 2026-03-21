@@ -1,0 +1,111 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram id="q14-streaming" name="Q14 - Plataforma de Streaming">
+    <mxGraphModel dx="1500" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+
+        <!-- Interface Reproduzivel -->
+        <mxCell id="irep" value="«interface»&#xa;Reproduzivel" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="irep-m" value="+ reproduzir(): void&#xa;+ pausar(): void&#xa;+ getDuracao(): int&#xa;+ getDescricao(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="irep">
+          <mxGeometry y="40" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Interface Avaliavel -->
+        <mxCell id="iaval" value="«interface»&#xa;Avaliavel" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="iaval-m" value="+ avaliar(int): void&#xa;+ getMediaAvaliacoes(): double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="iaval">
+          <mxGeometry y="40" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Classe Abstrata: Conteudo -->
+        <mxCell id="conteudo" value="«abstract»&#xa;Conteudo" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="190" y="230" width="270" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="cont-a" value="$ totalConteudos: int&#xa;- id: int&#xa;- titulo: String&#xa;- anoLancamento: int&#xa;- genero: String&#xa;- avaliacoes: List&lt;Integer&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="conteudo">
+          <mxGeometry y="40" width="270" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="cont-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="conteudo">
+          <mxGeometry y="150" width="270" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="cont-m" value="+ avaliar(int): void&#xa;+ getMediaAvaliacoes(): double&#xa;$ getTotalConteudos(): int&#xa;+ getTitulo(): String&#xa;+ reproduzir(): void {abstract}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="conteudo">
+          <mxGeometry y="160" width="270" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Filme -->
+        <mxCell id="filme" value="Filme" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="570" width="210" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="fil-a" value="- diretor: String&#xa;- duracaoMinutos: int&#xa;- legendas: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="filme">
+          <mxGeometry y="30" width="210" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="fil-sep" value="" style="line;strokeColor=#82b366;" vertex="1" parent="filme">
+          <mxGeometry y="100" width="210" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="fil-m" value="+ reproduzir(): void&#xa;+ pausar(): void&#xa;+ getDuracao(): int&#xa;+ getDescricao(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="filme">
+          <mxGeometry y="110" width="210" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Serie -->
+        <mxCell id="serie" value="Serie" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="570" width="220" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="ser-a" value="- numTemporadas: int&#xa;- numEpisodios: int&#xa;- duracaoEpMin: int&#xa;- status: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="serie">
+          <mxGeometry y="30" width="220" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="ser-sep" value="" style="line;strokeColor=#d6b656;" vertex="1" parent="serie">
+          <mxGeometry y="110" width="220" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="ser-m" value="+ reproduzir(): void&#xa;+ pausar(): void&#xa;+ getDuracao(): int&#xa;+ getDescricao(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="serie">
+          <mxGeometry y="120" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Documentario -->
+        <mxCell id="doc" value="Documentario" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="570" width="210" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="doc-a" value="- tema: String&#xa;- duracaoMinutos: int&#xa;- narradores: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="doc">
+          <mxGeometry y="30" width="210" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="doc-sep" value="" style="line;strokeColor=#b85450;" vertex="1" parent="doc">
+          <mxGeometry y="100" width="210" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="doc-m" value="+ reproduzir(): void&#xa;+ pausar(): void&#xa;+ getDuracao(): int&#xa;+ getDescricao(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="doc">
+          <mxGeometry y="110" width="210" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Herança -->
+        <mxCell id="ext-fil" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.2;entryY=1;" edge="1" parent="1" source="filme" target="conteudo">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ext-ser" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="serie" target="conteudo">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ext-doc" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="doc" target="conteudo">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Conteudo implements interfaces -->
+        <mxCell id="impl-rep" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.2;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="conteudo" target="irep">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="impl-aval" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.8;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="conteudo" target="iaval">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Labels -->
+        <mxCell id="lbl-impl1" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="158" width="110" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl-impl2" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="380" y="158" width="110" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl-ext" value="«extends»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="295" y="490" width="80" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

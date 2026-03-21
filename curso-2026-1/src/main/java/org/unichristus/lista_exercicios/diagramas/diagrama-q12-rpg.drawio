@@ -1,0 +1,112 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram id="q12-rpg" name="Q12 - Jogo RPG">
+    <mxGraphModel dx="1500" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+
+        <!-- Interface Combatente -->
+        <mxCell id="icomb" value="«interface»&#xa;Combatente" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="icomb-m" value="+ atacar(Personagem): int&#xa;+ defender(int): int&#xa;+ estaVivo(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="icomb">
+          <mxGeometry y="40" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Interface Magico -->
+        <mxCell id="imagico" value="«interface»&#xa;Magico" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="imagico-m" value="+ lancarMagia(Personagem): int&#xa;+ getMana(): int&#xa;+ regenerarMana(int): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="imagico">
+          <mxGeometry y="40" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Classe Abstrata: Personagem -->
+        <mxCell id="personagem" value="«abstract»&#xa;Personagem" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="220" y="240" width="270" height="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="per-a" value="$ totalPersonagens: int&#xa;- id: int&#xa;- nome: String&#xa;# vidaMaxima: int&#xa;# vidaAtual: int&#xa;# ataque: int&#xa;# defesa: int&#xa;# nivel: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="personagem">
+          <mxGeometry y="40" width="270" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="per-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="personagem">
+          <mxGeometry y="170" width="270" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="per-m" value="+ receberDano(int): void&#xa;+ getNome(): String&#xa;+ getStatus(): String&#xa;+ getHabilidadeEspecial(): String {abstract}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="personagem">
+          <mxGeometry y="180" width="270" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Guerreiro -->
+        <mxCell id="guerreiro" value="Guerreiro" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="600" width="210" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="gue-a" value="- armadura: int&#xa;- raiva: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="guerreiro">
+          <mxGeometry y="30" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="gue-sep" value="" style="line;strokeColor=#82b366;" vertex="1" parent="guerreiro">
+          <mxGeometry y="80" width="210" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="gue-m" value="+ atacar(Personagem): int&#xa;+ defender(int): int&#xa;+ estaVivo(): boolean&#xa;+ getHabilidadeEspecial(): String&#xa;+ frenesi(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="guerreiro">
+          <mxGeometry y="90" width="210" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Mago -->
+        <mxCell id="mago" value="Mago" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="290" y="600" width="210" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="mag-a" value="- mana: int&#xa;- manaMaxima: int&#xa;- escolaMagia: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="mago">
+          <mxGeometry y="30" width="210" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="mag-sep" value="" style="line;strokeColor=#d6b656;" vertex="1" parent="mago">
+          <mxGeometry y="90" width="210" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="mag-m" value="+ atacar(Personagem): int&#xa;+ defender(int): int&#xa;+ estaVivo(): boolean&#xa;+ lancarMagia(Personagem): int&#xa;+ getMana(): int&#xa;+ regenerarMana(int): void&#xa;+ getHabilidadeEspecial(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="mago">
+          <mxGeometry y="100" width="210" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Arqueiro -->
+        <mxCell id="arqueiro" value="Arqueiro" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="600" width="210" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="arq-a" value="- flechas: int&#xa;- precisao: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="arqueiro">
+          <mxGeometry y="30" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="arq-sep" value="" style="line;strokeColor=#b85450;" vertex="1" parent="arqueiro">
+          <mxGeometry y="80" width="210" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="arq-m" value="+ atacar(Personagem): int&#xa;+ defender(int): int&#xa;+ estaVivo(): boolean&#xa;+ getHabilidadeEspecial(): String&#xa;+ atirarFlechaMultipla(): int&#xa;+ getFlechas(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="arqueiro">
+          <mxGeometry y="90" width="210" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Herança -->
+        <mxCell id="ext-gue" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.2;entryY=1;" edge="1" parent="1" source="guerreiro" target="personagem">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ext-mag" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="mago" target="personagem">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ext-arq" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="arqueiro" target="personagem">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Personagem implements Combatente -->
+        <mxCell id="impl-comb" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.2;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="personagem" target="icomb">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Mago implements Magico -->
+        <mxCell id="impl-mag" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.8;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="mago" target="imagico">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="395" y="510"/><mxPoint x="510" y="510"/></Array></mxGeometry>
+        </mxCell>
+
+        <!-- Labels -->
+        <mxCell id="lbl-ext" value="«extends»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="285" y="550" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl-impl-comb" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="100" y="175" width="110" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl-impl-mag" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="510" width="110" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

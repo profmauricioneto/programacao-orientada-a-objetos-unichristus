@@ -1,0 +1,8 @@
+Um restaurante está implementando um sistema de autoatendimento digital. Projete e implemente o sistema completo aplicando todos os conceitos de POO estudados:
+ - Enum Categoria: ENTRADA, PRATO_PRINCIPAL, SOBREMESA, BEBIDA.
+ - ItemCardapio (classe abstrata): atributo estático contadorItens, id automático, nome, preço, categoria e disponibilidade. Método estático getTotalItens(). Método abstrato getDescricaoCompleta().
+ - Prato e Bebida: herdam de ItemCardapio com atributos específicos.
+ - Pagavel (interface): calcularTotal() e realizarPagamento(String).
+ - ItemPedido: associa um ItemCardapio com quantidade e observação; possui getSubtotal().
+ - Pedido: contador estático de pedidos, número automático, cliente, lista de ItemPedido. Implementa Pagavel. Método adicionarItem() deve verificar disponibilidade.
+Demonstre polimorfismo, encapsulamento, herança e uso de estáticos no programa principal.

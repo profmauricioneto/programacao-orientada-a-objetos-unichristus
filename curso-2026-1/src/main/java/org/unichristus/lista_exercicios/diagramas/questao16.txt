@@ -1,0 +1,10 @@
+Uma rede de academias de ginástica precisa de um sistema completo. Aplique todos os conceitos de POO estudados:
+ - Enum TipoModalidade: MUSCULACAO, NATACAO, YOGA, SPINNING, CROSSFIT.
+ - Pagante (interface): pagarMensalidade() e calcularDesconto(): double.
+ - Avaliavel (interface): avaliarAluno(String laudo) e getUltimaAvaliacao(): String.
+ - Pessoa (classe abstrata): nome, CPF, telefone, e-mail (encapsulados). Método abstrato getResumo().
+ - Aluno: estende Pessoa, implementa Pagante. Atributo estático totalAlunos, matrícula automática, plano contratado, lista de modalidades inscritas, contador de mensalidades pagas. Desconto por fidelidade (a cada 12 meses pagos, 10% de desconto).
+ - Instrutor: estende Pessoa, implementa Avaliavel. Possui CREF, lista de especialidades (TipoModalidade), salário. Armazena histórico de avaliações realizadas.
+ - Plano: nome, valor mensal, número de meses e se inclui avaliação física.
+ - Modalidade: tipo (TipoModalidade), instrutor responsável, horário, capacidade máxima, inscritos. Verifica vaga antes de inscrever.
+ - Academia: nome, CNPJ, gerencia alunos, instrutores e modalidades. Gera relatório com taxa de ocupação e faturamento mensal estimado.

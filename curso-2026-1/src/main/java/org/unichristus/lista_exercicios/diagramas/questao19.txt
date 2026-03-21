@@ -1,0 +1,8 @@
+Um banco digital oferece três modalidades de conta. Projete usando herança, abstração e interfaces:
+ - Tributavel (interface): calcularImposto(): double e getAliquota(): double.
+ - Transferivel (interface): transferir(Conta, double): boolean e getHistoricoTransferencias(): List.
+ - Conta (abstrata, implementa ambas): contador estático, número automático, agência, titular (Cliente), saldo protegido, extrato. Métodos concretos depositar e sacar (valida limite). Métodos abstratos getTipo() e getLimiteOperacao().
+ - ContaCorrente: limite de crédito (pode sacar até saldo + limite), taxa de manutenção. IOF de 0,38% sobre operações.
+ - ContaPoupanca: taxa de rendimento mensal, dia de aniversário. Isenta de imposto. Sem transferências.
+ - ContaInvestimento: perfil de risco, rentabilidade anual. IR de 15% sobre rendimentos. Permite transferências com taxa de 0,5%.
+ - Cliente: agrupa múltiplas contas e exibe patrimônio total.

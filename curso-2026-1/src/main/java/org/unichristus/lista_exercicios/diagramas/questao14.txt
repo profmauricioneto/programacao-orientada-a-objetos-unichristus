@@ -1,0 +1,8 @@
+Uma plataforma de streaming precisa gerenciar seu catálogo de conteúdos. Projete:
+ - Reproduzivel (interface): reproduzir(), pausar(), getDuracao(): int (em minutos) e getDescricao(): String.
+ - Avaliavel (interface): avaliar(int nota) — nota de 1 a 5 — e getMediaAvaliacoes(): double.
+ - Conteudo (classe abstrata, implementa ambas): atributo estático totalConteudos, id automático, título, ano, gênero, lista de avaliações. Método avaliar() já implementado (valida nota 1–5). Método abstrato reproduzir().
+ - Filme: herda Conteudo, possui diretor, duração em minutos e lista de legendas disponíveis.
+ - Serie: herda Conteudo, possui número de temporadas, episódios e duração por episódio. getDuracao() retorna duração total de todos os episódios.
+ - Documentario: herda Conteudo, possui tema e lista de narradores. Exibe informações ao reproduzir.
+Crie uma lista de Conteudo e demonstre polimorfismo, ordenação por avaliação e busca por gênero.

@@ -1,0 +1,127 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram id="q22-cartas" name="Q22 - Jogo de Cartas">
+    <mxGraphModel dx="1500" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <!-- Enum Naipe -->
+        <mxCell id="enaipe" value="«enum»&#xa;Naipe" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e6d0de;strokeColor=#ae4132;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="40" width="160" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="enaipe-v" value="OUROS&#xa;ESPADAS&#xa;COPAS&#xa;PAUS" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="enaipe">
+          <mxGeometry y="40" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <!-- Interface Jogavel -->
+        <mxCell id="ijog" value="«interface»&#xa;Jogavel" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="210" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="ijog-m" value="+ jogar(Carta): int&#xa;+ getDescricaoJogada(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="ijog">
+          <mxGeometry y="40" width="210" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Carta -->
+        <mxCell id="carta" value="Carta" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="200" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="carta-a" value="- valor: int&#xa;- naipe: Naipe&#xa;- virada: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="carta">
+          <mxGeometry y="30" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="carta-sep" value="" style="line;strokeColor=#82b366;" vertex="1" parent="carta">
+          <mxGeometry y="100" width="200" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="carta-m" value="+ getValor(): int&#xa;+ getNaipe(): Naipe&#xa;+ virar(): void&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="carta">
+          <mxGeometry y="110" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <!-- Baralho -->
+        <mxCell id="baralho" value="Baralho" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="40" width="220" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="bar-a" value="$ totalBaralhos: int&#xa;- cartas: List&lt;Carta&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="baralho">
+          <mxGeometry y="30" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="bar-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="baralho">
+          <mxGeometry y="80" width="220" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="bar-m" value="+ embaralhar(): void&#xa;+ distribuir(int): List&lt;Carta&gt;&#xa;+ cartasRestantes(): int&#xa;$ getTotalBaralhos(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="baralho">
+          <mxGeometry y="90" width="220" height="80" as="geometry"/>
+        </mxCell>
+        <!-- Classe Abstrata Jogador -->
+        <mxCell id="jogador" value="«abstract»&#xa;Jogador" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="320" y="310" width="260" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="jog-a" value="$ totalJogadores: int&#xa;- id: int&#xa;- nome: String&#xa;- mao: List&lt;Carta&gt;&#xa;- pontuacao: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="jogador">
+          <mxGeometry y="40" width="260" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="jog-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="jogador">
+          <mxGeometry y="140" width="260" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="jog-m" value="+ receberCarta(Carta): void&#xa;+ getPontuacao(): int&#xa;+ getNome(): String&#xa;+ getEstrategia(): String {abstract}&#xa;+ jogar(Carta): int {abstract}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="jogador">
+          <mxGeometry y="150" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <!-- JogadorAgressivo -->
+        <mxCell id="jagr" value="JogadorAgressivo" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="650" width="210" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="jagr-a" value="- multiplicadorAtaque: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="jagr">
+          <mxGeometry y="30" width="210" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="jagr-sep" value="" style="line;strokeColor=#b85450;" vertex="1" parent="jagr">
+          <mxGeometry y="70" width="210" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="jagr-m" value="+ getEstrategia(): String&#xa;+ jogar(Carta): int&#xa;+ getDescricaoJogada(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="jagr">
+          <mxGeometry y="80" width="210" height="70" as="geometry"/>
+        </mxCell>
+        <!-- JogadorDefensivo -->
+        <mxCell id="jdef" value="JogadorDefensivo" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="340" y="650" width="210" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="jdef-a" value="- pontosGuardados: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="jdef">
+          <mxGeometry y="30" width="210" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="jdef-sep" value="" style="line;strokeColor=#82b366;" vertex="1" parent="jdef">
+          <mxGeometry y="70" width="210" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="jdef-m" value="+ getEstrategia(): String&#xa;+ jogar(Carta): int&#xa;+ getDescricaoJogada(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="jdef">
+          <mxGeometry y="80" width="210" height="70" as="geometry"/>
+        </mxCell>
+        <!-- JogadorAleatorio -->
+        <mxCell id="jale" value="JogadorAleatorio" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="650" width="210" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="jale-sep" value="" style="line;strokeColor=#d6b656;" vertex="1" parent="jale">
+          <mxGeometry y="40" width="210" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="jale-m" value="+ getEstrategia(): String&#xa;+ jogar(Carta): int&#xa;+ getDescricaoJogada(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="jale">
+          <mxGeometry y="50" width="210" height="70" as="geometry"/>
+        </mxCell>
+        <!-- Partida -->
+        <mxCell id="partida" value="Partida" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#e6d0de;strokeColor=#ae4132;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="900" y="310" width="240" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="par-a" value="$ totalPartidas: int&#xa;- numero: int&#xa;- baralho: Baralho&#xa;- jogadores: List&lt;Jogador&gt;&#xa;- rodadaAtual: int&#xa;- encerrada: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="partida">
+          <mxGeometry y="30" width="240" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="par-sep" value="" style="line;strokeColor=#ae4132;" vertex="1" parent="partida">
+          <mxGeometry y="140" width="240" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="par-m" value="+ iniciar(): void&#xa;+ jogarRodada(): void&#xa;+ getVencedor(): Jogador&#xa;$ getTotalPartidas(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="partida">
+          <mxGeometry y="150" width="240" height="50" as="geometry"/>
+        </mxCell>
+        <!-- Herança -->
+        <mxCell id="ext-jagr" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.2;entryY=1;" edge="1" parent="1" source="jagr" target="jogador"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ext-jdef" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="jdef" target="jogador"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ext-jale" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="jale" target="jogador"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Jogador implements Jogavel -->
+        <mxCell id="impl-jog" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.1;exitY=0;entryX=1;entryY=0.5;" edge="1" parent="1" source="jogador" target="ijog"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Jogador tem Carta -->
+        <mxCell id="assoc-jog-carta" value="possui" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="jogador" target="carta"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Carta -> Naipe -->
+        <mxCell id="assoc-carta-naipe" value="tem" style="endArrow=open;endFill=0;exitX=1;exitY=0.3;entryX=0;entryY=0.5;" edge="1" parent="1" source="carta" target="enaipe"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Partida -> Baralho -->
+        <mxCell id="assoc-par-bar" value="usa" style="endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="partida" target="baralho"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Partida -> Jogadores -->
+        <mxCell id="assoc-par-jog" value="gerencia" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="partida" target="jogador"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="lbl-ext" value="«extends»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1"><mxGeometry x="340" y="590" width="80" height="20" as="geometry"/></mxCell>
+        <mxCell id="lbl-impl" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1"><mxGeometry x="80" y="390" width="110" height="20" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

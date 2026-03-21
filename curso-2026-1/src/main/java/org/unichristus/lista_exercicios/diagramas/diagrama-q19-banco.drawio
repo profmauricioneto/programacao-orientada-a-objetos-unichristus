@@ -1,0 +1,90 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram id="q19-banco" name="Q19 - Sistema Bancário Avançado">
+    <mxGraphModel dx="1500" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="itrib" value="«interface»&#xa;Tributavel" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="210" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="itrib-m" value="+ calcularImposto(): double&#xa;+ getAliquota(): double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="itrib">
+          <mxGeometry y="40" width="210" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="itransf" value="«interface»&#xa;Transferivel" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="370" y="40" width="220" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="itransf-m" value="+ transferir(Conta, double): boolean&#xa;+ getHistoricoTransferencias(): List" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="itransf">
+          <mxGeometry y="40" width="220" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="conta" value="«abstract»&#xa;Conta" style="swimlane;fontStyle=3;align=center;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="200" y="230" width="270" height="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="conta-a" value="$ totalContas: int&#xa;- numero: String&#xa;- agencia: String&#xa;- titular: Cliente&#xa;# saldo: double&#xa;- extrato: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="conta">
+          <mxGeometry y="40" width="270" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="conta-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="conta">
+          <mxGeometry y="150" width="270" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="conta-m" value="+ depositar(double): void&#xa;+ sacar(double): boolean&#xa;+ getSaldo(): double&#xa;$ getTotalContas(): int&#xa;+ getTipo(): String {abstract}&#xa;+ getLimiteOperacao(): double {abstract}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="conta">
+          <mxGeometry y="160" width="270" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="cc" value="ContaCorrente" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="590" width="230" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="cc-a" value="- limiteCredito: double&#xa;- taxaManutencao: double&#xa;- historicoTransf: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="cc">
+          <mxGeometry y="30" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="cc-sep" value="" style="line;strokeColor=#82b366;" vertex="1" parent="cc">
+          <mxGeometry y="100" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="cc-m" value="+ getTipo(): String&#xa;+ getLimiteOperacao(): double&#xa;+ calcularImposto(): double&#xa;+ getAliquota(): double&#xa;+ transferir(Conta, double): boolean&#xa;+ getHistoricoTransferencias(): List" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="cc">
+          <mxGeometry y="110" width="230" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="cp" value="ContaPoupanca" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="590" width="230" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="cp-a" value="- taxaRendimento: double&#xa;- dataAniversario: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="cp">
+          <mxGeometry y="30" width="230" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="cp-sep" value="" style="line;strokeColor=#d6b656;" vertex="1" parent="cp">
+          <mxGeometry y="80" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="cp-m" value="+ getTipo(): String&#xa;+ getLimiteOperacao(): double&#xa;+ calcularImposto(): double&#xa;+ getAliquota(): double&#xa;+ renderJuros(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="cp">
+          <mxGeometry y="90" width="230" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="ci" value="ContaInvestimento" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="590" width="230" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="ci-a" value="- perfilRisco: String&#xa;- rentabilidadeAnual: double&#xa;- historicoTransf: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="ci">
+          <mxGeometry y="30" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="ci-sep" value="" style="line;strokeColor=#b85450;" vertex="1" parent="ci">
+          <mxGeometry y="100" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="ci-m" value="+ getTipo(): String&#xa;+ getLimiteOperacao(): double&#xa;+ calcularImposto(): double&#xa;+ getAliquota(): double&#xa;+ transferir(Conta, double): boolean&#xa;+ getHistoricoTransferencias(): List&#xa;+ calcularRendimento(int): double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="ci">
+          <mxGeometry y="110" width="230" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="cliente" value="Cliente" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="860" y="230" width="220" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="cli-a" value="- nome: String&#xa;- cpf: String&#xa;- email: String&#xa;- contas: List&lt;Conta&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="cliente">
+          <mxGeometry y="30" width="220" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="cli-sep" value="" style="line;strokeColor=#6c8ebf;" vertex="1" parent="cliente">
+          <mxGeometry y="110" width="220" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="cli-m" value="+ adicionarConta(Conta): void&#xa;+ getContas(): List&lt;Conta&gt;&#xa;+ getNome(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;" vertex="1" parent="cliente">
+          <mxGeometry y="120" width="220" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ext-cc" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.2;entryY=1;" edge="1" parent="1" source="cc" target="conta"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ext-cp" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="cp" target="conta"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ext-ci" value="" style="endArrow=block;endFill=0;endSize=12;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="ci" target="conta"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="impl-trib" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.2;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="conta" target="itrib"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="impl-transf" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;exitX=0.8;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="conta" target="itransf"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="assoc-conta-cli" value="pertence a" style="endArrow=open;endFill=0;exitX=1;exitY=0.4;entryX=0;entryY=0.5;" edge="1" parent="1" source="conta" target="cliente"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="lbl-ext" value="«extends»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1"><mxGeometry x="270" y="500" width="80" height="20" as="geometry"/></mxCell>
+        <mxCell id="lbl-impl1" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1"><mxGeometry x="65" y="160" width="110" height="20" as="geometry"/></mxCell>
+        <mxCell id="lbl-impl2" value="«implements»" style="text;html=1;fontSize=10;fontStyle=2;labelBackgroundColor=none;" vertex="1" parent="1"><mxGeometry x="390" y="160" width="110" height="20" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
