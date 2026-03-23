@@ -1,104 +1,103 @@
-<mxfile host="app.diagrams.net" version="21.0.0">
+<mxfile host="drawio-plugin" modified="2026-03-23T21:50:02.655Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" version="22.1.22" etag="vJSTyFJsgdIjs3K7NkAd" type="embed">
   <diagram id="q3-biblioteca" name="Q3 - Sistema de Biblioteca">
-    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="888" dy="576" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- Autor -->
-        <mxCell id="autor" value="Autor" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="60" y="200" width="220" height="130" as="geometry" />
+        <mxCell id="autor" value="Autor" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="60" y="200" width="220" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="autor-attrs" value="- nome: String&#xa;- nacionalidade: String&#xa;- dataNascimento: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="autor">
+        <mxCell id="autor-attrs" value="- nome: String&#xa;- nacionalidade: String&#xa;- dataNascimento: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" parent="autor" vertex="1">
           <mxGeometry y="30" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="autor-sep" value="" style="line;strokeColor=#6c8ebf;fillColor=none;" vertex="1" parent="autor">
+        <mxCell id="autor-sep" value="" style="line;strokeColor=#6c8ebf;fillColor=none;" parent="autor" vertex="1">
           <mxGeometry y="90" width="220" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="autor-methods" value="+ getNome(): String&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="autor">
-          <mxGeometry y="100" width="220" height="30" as="geometry" />
+        <mxCell id="autor-methods" value="+ getNome(): String&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" parent="autor" vertex="1">
+          <mxGeometry y="100" width="220" height="60" as="geometry" />
         </mxCell>
-
-        <!-- Livro -->
-        <mxCell id="livro" value="Livro" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="420" y="160" width="240" height="160" as="geometry" />
+        <mxCell id="livro" value="Livro" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="420" y="160" width="240" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="livro-attrs" value="- titulo: String&#xa;- isbn: String&#xa;- anoPublicacao: int&#xa;- autores: List&lt;Autor&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="livro">
+        <mxCell id="livro-attrs" value="- titulo: String&#xa;- isbn: String&#xa;- anoPublicacao: int&#xa;- autores: List&lt;Autor&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" parent="livro" vertex="1">
           <mxGeometry y="30" width="240" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="livro-sep" value="" style="line;strokeColor=#82b366;fillColor=none;" vertex="1" parent="livro">
+        <mxCell id="livro-sep" value="" style="line;strokeColor=#82b366;fillColor=none;" parent="livro" vertex="1">
           <mxGeometry y="110" width="240" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="livro-methods" value="+ adicionarAutor(Autor): void&#xa;+ getTitulo(): String&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="livro">
-          <mxGeometry y="120" width="240" height="40" as="geometry" />
+        <mxCell id="livro-methods" value="+ adicionarAutor(Autor): void&#xa;+ getTitulo(): String&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" parent="livro" vertex="1">
+          <mxGeometry y="120" width="240" height="60" as="geometry" />
         </mxCell>
-
-        <!-- Emprestimo -->
-        <mxCell id="emprestimo" value="Emprestimo" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="emprestimo" value="Emprestimo" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="420" y="420" width="240" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="emp-attrs" value="- livro: Livro&#xa;- nomeSolicitante: String&#xa;- dataEmprestimo: LocalDate&#xa;- dataDevolucao: LocalDate&#xa;- devolvido: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="emprestimo">
+        <mxCell id="emp-attrs" value="- livro: Livro&#xa;- nomeSolicitante: String&#xa;- dataEmprestimo: LocalDate&#xa;- dataDevolucao: LocalDate&#xa;- devolvido: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" parent="emprestimo" vertex="1">
           <mxGeometry y="30" width="240" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="emp-sep" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="emprestimo">
+        <mxCell id="emp-sep" value="" style="line;strokeColor=#d6b656;fillColor=none;" parent="emprestimo" vertex="1">
           <mxGeometry y="130" width="240" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="emp-methods" value="+ devolver(): void&#xa;+ isDevolvido(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="emprestimo">
+        <mxCell id="emp-methods" value="+ devolver(): void&#xa;+ isDevolvido(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" parent="emprestimo" vertex="1">
           <mxGeometry y="140" width="240" height="40" as="geometry" />
         </mxCell>
-
-        <!-- Biblioteca -->
-        <mxCell id="biblioteca" value="Biblioteca" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="biblioteca" value="Biblioteca" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="780" y="280" width="260" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="bib-attrs" value="- nome: String&#xa;- acervo: List&lt;Livro&gt;&#xa;- emprestimos: List&lt;Emprestimo&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="biblioteca">
+        <mxCell id="bib-attrs" value="- nome: String&#xa;- acervo: List&lt;Livro&gt;&#xa;- emprestimos: List&lt;Emprestimo&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" parent="biblioteca" vertex="1">
           <mxGeometry y="30" width="260" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="bib-sep" value="" style="line;strokeColor=#b85450;fillColor=none;" vertex="1" parent="biblioteca">
+        <mxCell id="bib-sep" value="" style="line;strokeColor=#b85450;fillColor=none;" parent="biblioteca" vertex="1">
           <mxGeometry y="100" width="260" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="bib-methods" value="+ adicionarLivro(Livro): void&#xa;+ emprestarLivro(String, String, int): Emprestimo&#xa;+ buscarPorIsbn(String): Livro&#xa;+ buscarPorTitulo(String): List&lt;Livro&gt;&#xa;+ exibirAcervo(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" vertex="1" parent="biblioteca">
+        <mxCell id="bib-methods" value="+ adicionarLivro(Livro): void&#xa;+ emprestarLivro(String, String, int): Emprestimo&#xa;+ buscarPorIsbn(String): Livro&#xa;+ buscarPorTitulo(String): List&lt;Livro&gt;&#xa;+ exibirAcervo(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;overflow=hidden;" parent="biblioteca" vertex="1">
           <mxGeometry y="110" width="260" height="80" as="geometry" />
         </mxCell>
-
-        <!-- Autor -> Livro: associação (Livro tem lista de Autores) -->
-        <mxCell id="rel-autor-livro" value="escreve" style="endArrow=open;endFill=0;startArrow=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="autor" target="livro">
+        <mxCell id="rel-autor-livro" value="escreve" style="endArrow=open;endFill=0;startArrow=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="autor" target="livro" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rel-autor-livro-label1" value="1..*" style="resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="rel-autor-livro">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        <mxCell id="rel-autor-livro-label1" value="1..*" style="resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" parent="rel-autor-livro" connectable="0" vertex="1">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="rel-autor-livro-label2" value="0..*" style="resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="rel-autor-livro">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        <mxCell id="rel-autor-livro-label2" value="0..*" style="resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=none;" parent="rel-autor-livro" connectable="0" vertex="1">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-
-        <!-- Livro -> Emprestimo: composição -->
-        <mxCell id="rel-livro-emp" value="registra" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="livro" target="emprestimo">
+        <mxCell id="rel-livro-emp" value="registra" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="livro" target="emprestimo" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rel-livro-emp-label1" value="1" style="resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="rel-livro-emp">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        <mxCell id="rel-livro-emp-label1" value="1" style="resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" parent="rel-livro-emp" connectable="0" vertex="1">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="rel-livro-emp-label2" value="0..*" style="resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="rel-livro-emp">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        <mxCell id="rel-livro-emp-label2" value="0..*" style="resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=none;" parent="rel-livro-emp" connectable="0" vertex="1">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-
-        <!-- Biblioteca -> Livro: agregação -->
-        <mxCell id="rel-bib-livro" value="gerencia" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="biblioteca" target="livro">
+        <mxCell id="rel-bib-livro" value="gerencia" style="endArrow=open;endFill=0;startArrow=diamondThin;startFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="biblioteca" target="livro" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rel-bib-livro-label1" value="1" style="resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="rel-bib-livro">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        <mxCell id="rel-bib-livro-label1" value="1" style="resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=none;" parent="rel-bib-livro" connectable="0" vertex="1">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="rel-bib-livro-label2" value="0..*" style="resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="rel-bib-livro">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        <mxCell id="rel-bib-livro-label2" value="0..*" style="resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" parent="rel-bib-livro" connectable="0" vertex="1">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-
-        <!-- Biblioteca -> Emprestimo -->
-        <mxCell id="rel-bib-emp" value="controla" style="endArrow=open;endFill=0;startArrow=none;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="biblioteca" target="emprestimo">
-          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="700" y="510"/></Array></mxGeometry>
+        <mxCell id="rel-bib-emp" value="controla" style="endArrow=open;endFill=0;startArrow=none;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="biblioteca" target="emprestimo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="510" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-
       </root>
     </mxGraphModel>
   </diagram>

@@ -1,4 +1,4 @@
-package org.unichristus.unidade2.ExemploList;
+package org.unichristus.unidade2.exemploList;
 
 import java.util.ArrayList;
 import java.util.List;
