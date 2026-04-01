@@ -37,7 +37,7 @@ public class Biblioteca {
     }
 
     public void exibirAcervo() {
-        this.acervo.stream().forEach(l -> System.out.println(l.toString()));
+        this.acervo.forEach(l -> System.out.println(l.toString()));
     }
 
     public static void main(String[] args) {
