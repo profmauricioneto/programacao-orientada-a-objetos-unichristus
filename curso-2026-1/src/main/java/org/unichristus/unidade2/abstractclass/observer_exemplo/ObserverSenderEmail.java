@@ -2,6 +2,8 @@ package org.unichristus.unidade2.abstractclass.observer_exemplo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.Vector;
 
 public class ObserverSenderEmail extends Observer {
     private List<String> listaEmails;
