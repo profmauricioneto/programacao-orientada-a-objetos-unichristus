@@ -24,16 +24,11 @@ public class Biblioteca {
     }
 
     public Optional<Livro> buscarPorISBN(String isbn) {
-        return acervo.stream().filter(l -> l.getIsbn().equals(isbn)).findFirst();
-//        for (Livro l: acervo) {
-//            if (l.getIsbn().equals(isbn)) {
-//                return l;
-//            }
-//        }
+        return acervo.stream().filter(l -> isbn.equals(l.getIsbn())).findFirst();
     }
 
     public List<Livro> buscarPorTitulo(String titulo) {
-        return acervo.stream().filter(l -> l.getTitulo().equals(titulo)).toList();
+        return acervo.stream().filter(l -> titulo.equals(l.getTitulo())).toList();
     }
 
     public void exibirAcervo() {
@@ -41,6 +36,24 @@ public class Biblioteca {
     }
 
     public static void main(String[] args) {
+        Biblioteca bibliotecaPOO = new Biblioteca("Biblioteca Programação Orientada a Objetos");
+
+        Autor token = new Autor("J.R.R. Token", "01/01/1850");
+        Autor lovecraft = new Autor("H.P. Lovecraft", "01/01/1920");
+
+        Livro senhorDosAneis = new Livro("O Senhor dos Anéis", 1920, token, bibliotecaPOO);
+        Livro necromicon = new Livro("Necronomicon", 1950, lovecraft, bibliotecaPOO);
+
+        bibliotecaPOO.adicionarLivro(senhorDosAneis);
+        bibliotecaPOO.adicionarLivro(necromicon);
+
+        senhorDosAneis.setIsbn("12345678");
+        necromicon.setIsbn("87654321");
+
+        Emprestimo emprestimo = new Emprestimo("Joãozinho", senhorDosAneis);
+        emprestimo.devolver();
+
+        System.out.println(bibliotecaPOO.buscarPorISBN("12345678"));
 
     }
 
