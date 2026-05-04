@@ -20,6 +20,7 @@ class AccountLSP {
     public double getBalance() {
         return balance;
     }
+    public void setBalance(double balance) { this.balance = balance; }
     public void withdraw(double value) {
         if (balance >= value) {
             this.balance = this.balance - value;
@@ -52,7 +53,42 @@ class AccountSpecial {
     public void deposit(double value) {
         account.deposit(value);
     }
+
+    public void income() {
+        System.out.println("Não há rendimento em conta especial");
+    }
 }
+
+class SavingAccount {
+    private AccountLSP account;
+    private double balance;
+
+    public SavingAccount() {
+        account = new AccountLSP();
+    }
+    public SavingAccount(double balance) {
+        account = new AccountLSP(balance);
+    }
+
+    public double getBalance() {
+        return account.getBalance();
+    }
+
+    public void withdraw(double value) {
+        account.withdraw(value);
+    }
+
+    public void deposit(double value) {
+        account.deposit(value);
+    }
+
+    public void income() {
+        balance = getBalance();
+        balance += balance*1.1;
+        account.setBalance(balance);
+    }
+}
+
 public class GoodLSPExample {
     public static void main(String[] args) {
         AccountSpecial account = new AccountSpecial(500);
