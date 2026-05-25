@@ -1,0 +1,8 @@
+CREATE TABLE usuarios (
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
+  cpf VARCHAR(150) NOT NULL UNIQUE,
+  data DATE,
+  PRIMARY KEY(id)
+);

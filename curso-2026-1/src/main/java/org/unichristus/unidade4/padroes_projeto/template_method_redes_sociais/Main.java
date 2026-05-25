@@ -19,6 +19,9 @@ public class Main {
         } else if (network.equalsIgnoreCase("x")) {
             sn = new XNetwork("Mauricio", "teste");
             sn.postData(message);
+        }else if (network.equalsIgnoreCase("instagram")){
+            sn = new InstagramNetwork("Mauricio", "teste");
+            sn.postData(message);
         } else {
             System.err.println("Erro na escolha da rede social.");
         }
