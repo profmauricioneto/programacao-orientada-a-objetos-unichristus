@@ -38,12 +38,41 @@ public class Main {
         dao.mostrarUsuarios();
     }
 
+    public void deletarUsuario() {
+        System.out.println("Digite o ID a deletar: ");
+        int id = scan.nextInt();
+        dao.deletarUsuario(id);
+    }
+
+    public void updateUsuario() {
+        Usuarios usuario = new Usuarios();
+        System.out.println("Qual ID queres mudar: ");
+        int id = scan.nextInt();
+
+        System.out.println("Digite o nome do usuário: ");
+        String nome = scan.next();
+        usuario.setNome(nome);
+
+        System.out.println("Digite o email do usuário: ");
+        String email = scan.next();
+        usuario.setEmail(email);
+
+        System.out.println("Digite o CPF do usuário: ");
+        String cpf = scan.next();
+        usuario.setCpf(cpf);
+
+        Calendar data = Calendar.getInstance();
+        usuario.setData(data);
+
+        dao.updateUsuario(id, usuario);
+    }
+
     public void iniciar() throws SQLException {
         Main entrada = new Main();
         System.out.println("CRUD usando JDBC e DAO");
         int op = 0;
         do {
-            System.out.println("Escolha as opções:]\n1 - Add Usuario\n2 - Mostrar Usuarios\n3 - Sair\nOpcao: ");
+            System.out.println("Escolha as opções:]\n1 - Add Usuario\n2 - Mostrar Usuarios\n3 - Deletar\n4 - Atualizar Usuario\n5 - Sair\nOpcao: ");
             op = scan.nextInt();
             switch (op) {
                 case 1: {
@@ -56,6 +85,14 @@ public class Main {
                     break;
                 }
                 case 3: {
+                    entrada.deletarUsuario();
+                    break;
+                }
+                case 4: {
+                    entrada.updateUsuario();
+                    break;
+                }
+                case 5: {
                     System.out.println("Fim do Programa! Obrigado.");
                     break;
                 }
@@ -63,7 +100,7 @@ public class Main {
                     System.err.println("Nenhum caso válido foi escolhido");
                 }
             }
-        } while (op != 3);
+        } while (op != 5);
         System.out.println("Fim do sistema");
     }
 
