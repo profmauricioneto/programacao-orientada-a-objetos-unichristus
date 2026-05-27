@@ -40,10 +40,10 @@ public class UsuariosDAO {
             List<Usuarios> usuarios = new ArrayList<>();
             while(rs.next()) {
                 System.out.println("ID : " + rs.getInt("id"));
-                System.out.println("NOME : " + rs.getInt("nome"));
-                System.out.println("EMAIL : " + rs.getInt("email"));
-                System.out.println("CPF : " + rs.getInt("cpf"));
-                System.out.println("DATA : " + rs.getInt("data"));
+                System.out.println("NOME : " + rs.getString("nome"));
+                System.out.println("EMAIL : " + rs.getString("email"));
+                System.out.println("CPF : " + rs.getString("cpf"));
+                System.out.println("DATA : " + rs.getDate("data"));
             }
             rs.close();
             state.close();
