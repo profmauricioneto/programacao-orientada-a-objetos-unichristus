@@ -1,4 +1,4 @@
-package edu.unichristus.introducaopoo;
+package edu.unichristus.introducao_poo;
 
 public class Main {
     public static void main(String[] args) {

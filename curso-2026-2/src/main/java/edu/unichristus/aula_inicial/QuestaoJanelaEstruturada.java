@@ -1,4 +1,4 @@
-package edu.unichristus;
+package edu.unichristus.aula_inicial;
 
 import java.util.Scanner;
 
