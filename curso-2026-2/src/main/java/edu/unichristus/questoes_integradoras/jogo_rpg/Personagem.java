@@ -11,11 +11,13 @@ public abstract class Personagem implements Combatente {
     protected int defesa;
     protected short nivel;
 
-    public Personagem(String nome, int id) {
+    public Personagem(String nome, int id, int ataque, int defesa) {
         this.nome = nome;
         this.id = id;
         this.vidaAtual = VIDA_MAXIMA;
         this.nivel = 1;
+        this.ataque = ataque;
+        this.defesa = defesa;
     }
 
     @Override
