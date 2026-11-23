@@ -101,6 +101,15 @@ class InvestingAccount extends Account {
     }
 }
 
+class UniversityAccount extends Account {
+    public UniversityAccount() {super();}
+    public UniversityAccount(double balance) {super(balance);}
+    @Override
+    public void createAccount() {
+        System.out.println("University Account created!");
+    }
+}
+
 public class GoodOCPExample {
     public static void main(String[] args) {
         Account salaryAccount = new SalaryAccount(1000);
@@ -120,5 +129,8 @@ public class GoodOCPExample {
 
         Account investingAccount = new InvestingAccount();
         investingAccount.createAccount();
+
+        Account universityAccount = new UniversityAccount();
+        universityAccount.createAccount();
     }
 }
